@@ -1,0 +1,18 @@
+{
+  "versionCode": 101,
+  "versionName": "1.0.1",
+  "releaseDate": "2025.01.05",
+  "releaseSize": 282624,
+  "releaseDescription": "Hi，朋友们！<br>本次更新内容如下：<br>** 重构播放组件，优化播放体验 **<br>** 重构投屏功能，优化投屏体验 **<br>** 重构搜索功能，优化搜索体验 **<br>** 优化媒体播放，提升起播速度 **<br>下载地址：<a href='https://www.123865.com/s/jRWiVv-ydedd'>123网盘</a>",
+  "webDownloadURL": "https://www.123865.com/s/jRWiVv-ydedd",
+  "directDownloadURL": "http://120.77.222.160:2335/lanzouk?url=https://xswl.lanzn.com/iAr4g2k08ypa",
+  "feedbackURL": "https://github.com/viewmeow/Meow-Maven-2025/issues/new",
+  "cancelable": false,
+  "hash": "",
+  "playerNoticeText":"请勿相信视频中的赌博广告，远离电诈，赌",
+  "config": {
+    "adSplashType": "Gdt",
+    "adDetailThreshold": 1,
+    "adDetailType": "Gdt"
+  }
+}

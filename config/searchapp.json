@@ -1,0 +1,968 @@
+{
+  "id": "app",
+  "name": "APP",
+  "mac": [
+    {
+      "id": "v.lkuys.cn",
+      "name": "追剧",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://v.lkuys.cn/v2/home/",
+      "sort": 1,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"post",
+      "sign": "kj5649ertj84ks89r4jh8s45hf84hjfds04k",
+      "playerHeard": {}
+    },
+    {
+      "id": "tt.ysdqjs.cn",
+      "name": "天天",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://tt.ysdqjs.cn/v2/home/",
+      "sort": 2,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"post",
+      "sign": "kj5649ertj84ks89r4jh8s45hf84hjfds04k",
+      "playerHeard": {}
+    },
+    {
+      "id": "v.rbotv.cn",
+      "name": "热播",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://v.rbotv.cn/v3/home/",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"post",
+      "sign": "7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl",
+      "playerHeard": {}
+
+    }
+  ],
+  "json":[
+    {
+      "id": "www.hskjjglo.com",
+      "name": "剧评",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "https://www.hskjjglo.com",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": true,
+      "httpMethod":"get",
+      "search":{
+        "path": "/api/mw-movie/anonymous/video/searchByWord?keyword={$wd}&pageNum=1&pageSize=8",
+        "requestHeader": {
+          "encryption": {
+            "method": ["md5","sha1"],
+            "field": ["Sign"]
+          },
+          "header": {
+            "t": "time()",
+            "Sign": "keyword={$wd}&pageNum=1&pageSize=8&key=cb808529bae6b6be45ecfab29a4889bc&t={t}",
+            "deviceid": "Deviceid",
+            "user-agent": "okhttp/5.0.0-alpha.14",
+            "Host": "www.hskjjglo.com",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.result.list",
+        "fieldVodName":"vodName",
+        "fieldVodId":"vodId",
+        "fieldVodType":"vodClass",
+        "fieldVodTime":"vodPubdate"
+      },
+      "detail": {
+        "path":"/api/mw-movie/anonymous/video/detail?id={$detail}",
+        "requestHeader": {
+          "encryption": {
+            "method": ["md5","sha1"],
+            "field": ["Sign"]
+          },
+          "header": {
+            "t": "time()",
+            "Sign": "id={$detail}&key=cb808529bae6b6be45ecfab29a4889bc&t={t}",
+            "deviceid": "Deviceid",
+            "user-agent": "okhttp/5.0.0-alpha.14",
+            "Host": "www.hskjjglo.com",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data",
+        "fieldVodName":"vodName",
+        "fieldVodId":"vodId",
+        "fieldVodType":"vodClass",
+        "fieldVodTime":"vodPubdate",
+        "fieldVodPic":"vodPic",
+        "fieldVodContent":"vodContent",
+        "fieldVodRemarks":"vodRemarks",
+        "fieldPlayer":"episodeList",
+        "dtEntities": {
+          "parse_urls": ["https://www.hskjjglo.com/api/mw-movie/anonymous/v2/video/episode/url?clientType=3&id={$detail}&nid="],
+          "parse_encrypt": true,
+          "is_clarity": true,
+          "flag_name":["自建"],
+          "urls_name": "name",
+          "urls_url": "nid"
+        }
+      },
+      "parse": {
+        "replacementMethod": "url_paras",
+        "requestHeader": {
+          "encryption": {
+            "method": ["md5","sha1"],
+            "field": ["Sign"]
+          },
+          "header": {
+            "t": "time()",
+            "Sign": "clientType=3&id={id}&nid={nid}&key=cb808529bae6b6be45ecfab29a4889bc&t={t}",
+            "deviceid": "Deviceid",
+            "user-agent": "okhttp/5.0.0-alpha.14",
+            "Host": "www.hskjjglo.com",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.list",
+        "fieldName":"resolutionName",
+        "fieldUrl":"url"
+      },
+      "playerHeard": {}
+    },
+    {
+      "id": "172.83.156.150:1010",
+      "name": "技巧",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://172.83.156.150:1010",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"get",
+      "search":{
+        "path": "/api.php/app/search?text={$wd}&pg=",
+        "requestHeader": {
+          "header": {
+            "User-Agent": "Dart/2.14 (dart:io)",
+            "Host": "172.83.156.150:1010",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_remarks",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldVodTime":"vod_time_add"
+      },
+      "detail":{
+        "path": "/api.php/app/video_detail?id={$detail}",
+        "requestHeader": {
+          "header": {
+            "User-Agent": "Dart/2.14 (dart:io)",
+            "Host": "172.83.156.150:1010",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_url_with_player",
+        "dtEntities": {
+          "parse_urls": ["https://zy.qiaoji8.com/gouzi.php?url=","https://zy.qiaoji8.com/neibu.php?url=","https://zy.qiaoji8.com/xiafan.php?url="],
+          "flag_name":"name",
+          "urls": "url",
+          "urls_name": "name",
+          "urls_url": "url"
+        }
+      },
+      "playerHeard": {}
+    },
+    {
+      "id": "api1.bffree.cn",
+      "name": "橘子",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "https://api1.bffree.cn",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"post",
+      "search":{
+        "path": "/api.php/getappapi.index/searchList",
+        "paras": "keywords={$wd}&type_id=0&page=1",
+        "requestHeader":{
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "2015692015692015",
+            "iv": "2015692015692015",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "api1.bffree.cn",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "2015692015692015",
+          "iv": "2015692015692015",
+          "field": ["data"]
+        },
+        "resultData": "data.search_list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldVodTime":"vod_time_add"
+      },
+      "detail":{
+        "path": "/api.php/getappapi.index/vodDetail",
+        "paras": "vod_id={$detail}",
+        "requestHeader":{
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "2015692015692015",
+            "iv": "2015692015692015",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "api1.bffree.cn",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "2015692015692015",
+          "iv": "2015692015692015",
+          "field": ["data"]
+        },
+        "resultData": "data",
+        "resultDataChild": "vod",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_play_list",
+        "dtEntities": {
+          "parse_urls": "player_info.parse",
+          "flag_name":"player_info.show",
+          "urls": "urls",
+          "urls_name": "name",
+          "urls_url": "url",
+          "parse_encrypt": true,
+          "is_clarity": false
+        }
+      },
+      "parse": {
+        "path": "/api.php/getappapi.index/vodParse",
+        "replacementMethod": "url",
+        "paras": {
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "2015692015692015",
+            "iv": "2015692015692015",
+            "field": ["url"]
+          },
+          "data": "parse_api={parse_url}&url={url}&token="
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "2015692015692015",
+          "iv": "2015692015692015",
+          "field": ["data"]
+        },
+        "requestHeader": {
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "2015692015692015",
+            "iv": "2015692015692015",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "api1.bffree.cn",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.json",
+        "fieldName":"resolutionName",
+        "fieldUrl":"url"
+        },
+      "playerHeard": {}
+
+      },
+    {
+      "id": "110.42.110.230",
+      "name": "驿站",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://110.42.110.230:16189",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"get",
+      "search":{
+        "path": "/api.php/v1.vod?wd={$wd}&limit=18&page=1",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "110.42.107.216:56677",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "d7378557d1d9c924",
+          "iv": "fb4594f622f34fea"
+        },
+        "resultData": "data.list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_remarks"
+      },
+      "detail": {
+        "path":"/api.php/v1.vod/detail?vod_id={$detail}",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "110.42.107.216:56677",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "d7378557d1d9c924",
+          "iv": "fb4594f622f34fea"
+        },
+        "resultData": "data",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_play_list",
+        "dtEntities": {
+          "parse_urls": [
+            {"from": "ffm3u8","url": "https://gur.xn--789-2f0fs81f34x.com:16688/dyyzapijson.php?url="},
+            {"from": "bfzym3u8","url": "https://gur.xn--789-2f0fs81f34x.com:16688/dyyzapijson.php?url="},
+            {"from": "lzm3u8","url": "https://gur.xn--789-2f0fs81f34x.com:16688/dyyzapijson.php?url="},
+            {"from": "1080zyk","url": "https://gur.xn--789-2f0fs81f34x.com:16688/dyyzapijson.php?url="},
+            {"from": "dyyz4k1","url": "https://gur.xn--789-2f0fs81f34x.com:16688/json2.php?url="},
+            {"from": "BBA","url": "https://gur.xn--789-2f0fs81f34x.com:16688/json.php?url="},
+            {"from": "dyyz4k2","url": "https://gur.xn--789-2f0fs81f34x.com:16688/json3.php?url="},
+            {"common": "https://qqiqiyiyoukumgtvapiappdyyztvjsoni8n2o0z1ws2n7b6v3x8.68.gy:56789/json.php?url=","parse_encrypt": true}
+          ],
+          "flag_name":"player_info.show",
+          "from": "from",
+          "urls": "urls",
+          "urls_name": "name",
+          "urls_url": "url"
+        }
+      },
+      "parse": {
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "d7378557d1d9c924",
+          "iv": "fb4594f622f34fea"
+        },
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "qqiqiyiyoukumgtvapiappdyyztvjsoni8n2o0z1ws2n7b6v3x8.68.gy:56789",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.list",
+        "fieldName":"resolutionName",
+        "fieldUrl":"url"
+      },
+      "playerHeard": {}
+    },
+    {
+      "id": "vod.iodow.top",
+      "name": "主角",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://vod.iodow.top",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"get",
+      "search":{
+        "path": "/api.php/v1.vod?wd={$wd}&limit=18&page=1",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "vod.iodow.top",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_remarks"
+      },
+      "detail": {
+        "path":"/api.php/v1.vod/detail?vod_id={$detail}",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "vod.iodow.top",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_play_list",
+        "dtEntities": {
+          "parse_urls": [
+            {"from": "qqqq","url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="},
+            {"from": "yhdm","url": "http://124.222.87.206:2188/api/?key=ffdb0879e9cc14012e30891c13e3731c&url="},
+            {"from": "qq","url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="},
+            {"from": "mgtv","url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="},
+            {"from": "qiyi","url": "http://124.222.87.206:2188/api/?key=ffdb0879e9cc14012e30891c13e3731c&url="},
+            {"from": "youku","url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="},
+            {"from": "NBY","url": "https://api.nbyjson.top:7788/api/?key=Z13yJ0dATkutcX1rbf&url="},
+            {"from": "rrmj","url": "http://124.222.87.206:2188/api/?key=ffdb0879e9cc14012e30891c13e3731c&url="},
+            {"from": "zjm","url": "http://124.248.67.191:6699/box/cmcc.php?id="},
+            {"from": "zhibo","url": "http://111.229.32.43:21888/api.php?key=6803abc0df968&type=migu&url="},
+            {
+              "from": "备用",
+              "url": "http://110.42.66.100:5666/api/?key=4a9d9ed2d25c0609a61a0cc171291988&url="
+            },
+            {
+              "from": "nmys",
+              "url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="
+            },
+            {
+              "from": "bbys",
+              "url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="
+            },
+            {
+              "from": "gzvip",
+              "url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="
+            },
+            {
+              "from": "ttys",
+              "url": "http://110.42.66.100:5666/api/?key=2034a83949183336911879a0c8092518&url="
+            }
+
+          ],
+          "flag_name":"player_info.show",
+          "from": "from",
+          "urls": "urls",
+          "urls_name": "name",
+          "urls_url": "url"
+        }
+      },
+      "playerHeard": {}
+    },
+    {
+      "id": "cms.neyym.cn",
+      "name": "永夜",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://cms.neyym.cn",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"get",
+      "search":{
+        "path": "/api.php/v1.vod?wd={$wd}&limit=18&page=1",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "cms.neyym.cn",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "66247d82fcfaeda9",
+          "iv": "70691065ee3c4c54"
+        },
+        "resultData": "data.list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_remarks"
+      },
+      "detail": {
+        "path":"/api.php/v1.vod/detail?vod_id={$detail}",
+        "requestHeader": {
+          "header": {
+            "app-time": "time()",
+            "sys-version": "10",
+            "os": "Android",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+            "app-device": "nodata",
+            "device": "9ac36a74547f9505",
+            "brand-model": "vivo",
+            "app-version": "4.2.0",
+            "Host": "cms.neyym.cn",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "66247d82fcfaeda9",
+          "iv": "70691065ee3c4c54"
+        },
+        "resultData": "data",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_play_list",
+        "dtEntities": {
+          "parse_urls": [
+             {"from": "NBY","url": "https://jx.youxidc.cn/api/?key=448f726c4858a32256811c6f42c30265&url="},
+            {"from": "ZhiBaiDj","url": "https://jx.bhs6.com/api/?key=7f09ac4c5a5b3f0a4f675170aa6b02ac&url="},
+            {"from": "ZhiBai4k-01","url": "https://jx.bhs6.com/api/?key=7f09ac4c5a5b3f0a4f675170aa6b02ac&url="},
+            {"from": "shzy","url": "https://js.puketv.com/api/?key=XYZ58z73GZngswUF0o&url="},
+            {"from": "zydm-1","url": "https://js.puketv.com/api/?key=XYZ58z73GZngswUF0o&url="},
+            {"common": "http://json.xn--xhqq0ymuct0cyu7cdie.com/api/?key=fa3fe52687e7bc7a7dfdeeff185d3070&url=","parse_encrypt": false}
+
+          ],
+          "flag_name":"player_info.show",
+          "from": "from",
+          "urls": "urls",
+          "urls_name": "name",
+          "urls_url": "url"
+        }
+      },
+      "playerHeard": {}
+
+    },
+    {
+      "id": "121.62.22.204:9876",
+      "name": "星河",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "http://121.62.22.204:9876",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": false,
+      "httpMethod":"post",
+      "search":{
+        "path": "/api.php/getappapi.index/searchList",
+        "paras": "keywords={$wd}&type_id=0&page=1",
+        "requestHeader":{
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "f5e2tx53ykp6s2c9",
+            "iv": "f5e2tx53ykp6s2c9",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "121.62.22.204:9876",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "f5e2tx53ykp6s2c9",
+          "iv": "f5e2tx53ykp6s2c9",
+          "field": ["data"]
+        },
+        "resultData": "data.search_list",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldVodTime":"vod_time_add"
+      },
+      "detail":{
+        "path": "/api.php/getappapi.index/vodDetail",
+        "paras": "vod_id={$detail}",
+        "requestHeader":{
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "f5e2tx53ykp6s2c9",
+            "iv": "f5e2tx53ykp6s2c9",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "121.62.22.204:9876",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "f5e2tx53ykp6s2c9",
+          "iv": "f5e2tx53ykp6s2c9",
+          "field": ["data"]
+        },
+        "resultData": "data",
+        "resultDataChild": "vod",
+        "fieldVodName":"vod_name",
+        "fieldVodId":"vod_id",
+        "fieldVodType":"vod_class",
+        "fieldVodTime":"vod_pubdate",
+        "fieldVodPic":"vod_pic",
+        "fieldVodContent":"vod_content",
+        "fieldVodRemarks":"vod_remarks",
+        "fieldPlayer":"vod_play_list",
+        "dtEntities": {
+          "parse_urls": "player_info.parse",
+          "flag_name":"player_info.show",
+          "urls": "urls",
+          "urls_name": "name",
+          "urls_url": "url",
+          "parse_encrypt": true,
+          "is_clarity": false
+        }
+      },
+      "parse": {
+        "path": "/api.php/getappapi.index/vodParse",
+        "replacementMethod": "url",
+        "paras": {
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "f5e2tx53ykp6s2c9",
+            "iv": "f5e2tx53ykp6s2c9",
+            "field": ["url"]
+          },
+          "data": "parse_api={parse_url}&url={url}&token="
+        },
+        "decryption": {
+          "method": ["ase-128-cbc"],
+          "key": "f5e2tx53ykp6s2c9",
+          "iv": "f5e2tx53ykp6s2c9",
+          "field": ["data"]
+        },
+        "requestHeader": {
+          "encryption": {
+            "method": ["ase-128-cbc"],
+            "key": "f5e2tx53ykp6s2c9",
+            "iv": "f5e2tx53ykp6s2c9",
+            "field": ["app-api-verify-sign"]
+          },
+          "header":  {
+            "app-ui-mode": "light",
+            "app-version-code": "300",
+            "app-user-device-id":"",
+            "app-api-verify-time": "time()",
+            "app-api-verify-sign": "{app-api-verify-time}",
+            "user-agent": "okhttp/3.14.9",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "121.62.22.204:9876",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip"
+          }
+        },
+        "resultData": "data.json",
+        "fieldName":"resolutionName",
+        "fieldUrl":"url"
+      },
+      "playerHeard": {}
+
+    }
+  ],
+  "web": [
+    {
+      "id": "shdy5.us",
+      "name": "骚火",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "https://shdy5.us",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": true,
+      "httpMethod":"get",
+      "search":{
+        "path": "/s----------.html?wd={$wd}",
+        "requestHeader": {
+          "header": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+            "cache-control": "no-cache",
+            "pragma": "no-cache",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+          }
+        },
+        "resListRule":".v_list > li",
+        "resNameRule":".v_title > a@text",
+        "resImgRule":".lazyload@attr-data-original",
+        "resNoteRule":".v_note@text",
+        "resDetailRule":".v_title > a@attr-href"
+      },
+      "detail":{
+        "path": "{$detail}",
+        "requestHeader": {
+          "header": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+            "cache-control": "no-cache",
+            "pragma": "no-cache",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1"
+          }
+
+        },
+        "NameRule":".v_title > a@text",
+        "TypeRule":".grid_box > p@text",
+        "DateRule":"",
+        "ImgRule": {"rule": ".m_background@attr-style",
+          "replace": [{"from": "background-image:url(","replace": ""},{"from": ")","replace": ""}]},
+        "DescriptionRule":".p_txt@text",
+        "playRuleEntities":{
+          "parse_urls": ["https://shdy5.us"],
+          "formListRule":".from_list>li",
+          "formItemRule":"@text",
+          "urlListRule":".play_list>li",
+          "urlItemUrlRule":"a@attr-href",
+          "urlItemNameRule":"a@text"
+        }
+      },
+      "parse": {
+        "requestHeader": {
+          "header": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+            "cache-control": "no-cache",
+            "pragma": "no-cache",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1"
+          }
+
+        }
+      },
+      "playerHeard": {}
+
+    },
+    {
+      "id": "www.subaibai.com",
+      "name": "素白白",
+      "charset": "utf-8",
+      "summary": "修订日期：2025-05-02",
+      "api": "https://www.subaibai.com",
+      "sort": 3,
+      "usePCUserAgent": true,
+      "recommend": true,
+      "httpMethod":"get",
+      "search":{
+        "path": "/search?q={$wd}",
+        "requestHeader": {
+          "header": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+            "cache-control": "no-cache",
+            "pragma": "no-cache",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+          }
+        },
+        "resListRule":".search_list > ul > li",
+        "resNameRule":".dytit > a@text",
+        "resImgRule":".thumb .lazy@attr-data-original",
+        "resNoteRule":".jidi>span@text",
+        "resDetailRule":".dytit > a@attr-href"
+      },
+      "detail":{
+        "path": "{$detail}",
+        "requestHeader": {
+          "header": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+            "cache-control": "no-cache",
+            "pragma": "no-cache",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1"
+          }
+
+        },
+        "NameRule":".moviedteail_tt > h1@text",
+        "TypeRule":".moviedteail_list > li:nth-child(1)@text",
+        "DateRule":".moviedteail_list > li:nth-child(8)@text",
+        "ImgRule": {"rule": ".dyimg >img@attr-src"},
+        "DescriptionRule":".yp_context > p@text",
+        "playRuleEntities":{
+          "parse_urls": [],
+          "formListRule":".mi_paly_box > .mi_ne_kd > .ypxingq_t >span",
+          "formItemRule":"@text",
+          "urlListRule":".paly_list_btn",
+          "urlItemUrlRule":"a@attr-href",
+          "urlItemNameRule":"a@text"
+        }
+      },
+      "playerHeard": {}
+
+    }
+  ],
+  "parse": [
+    {
+      "url":"https://mfjx.iwsyy.xyz/?url=",
+      "type":"json",
+      "flags": ["iqiyi","qq","youku","mgtv","sohu","m1905","letv","bilibili","imgo"],
+      "header": {
+        "User-Agent": "okhttp/4.9.1"
+      }
+    },
+    {
+      "url":"https://jx.xmflv.com/?url=",
+      "type":"web",
+      "flags": ["iqiyi","qq","youku","mgtv","sohu","m1905","letv","bilibili","imgo"],
+      "header": {
+        "origin":"https://jx.xmflv.com",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.57"
+      }
+    }
+  ]
+}
